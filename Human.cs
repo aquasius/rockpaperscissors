@@ -23,7 +23,7 @@ namespace RPSgame
         public override void chooseGesture()
         {
             Console.WriteLine("Please choose rock, paper, scissors, lizard, spock");
-            choice = Console.ReadLine();
+            choice = Console.ReadLine().ToLower();
         }
 
         

@@ -10,13 +10,13 @@ namespace RPSgame
     {
     
         //member variables ( has a ) 
-        public string player1Name;
-        public string player2Name;
-        public int players;
-        public string aiName;
-        public string rules;
-        public string winner;
-        public string loser;
+        //public string player1Name;
+        //public string player2Name;
+        //public int players;
+        //public string aiName;
+        //public string rules;
+        //public string winner;
+        //public string loser;
         public int numberOfPlayers;
          Player player1;
          Player player2;
@@ -34,9 +34,13 @@ namespace RPSgame
         {
             displayRules();
             chooseNumberOfPlayers();
+            createPlayers(numberOfPlayers);
             player1.chooseName();
             player2.chooseName();
-            createPlayers(numberOfPlayers);
+            player1.chooseGesture();
+            player2.chooseGesture();
+            determineGestureWin();
+
 
         }
     
@@ -67,11 +71,23 @@ namespace RPSgame
             }
         }
 
-        public void roundOne()
+        public void determineGestureWin()
         {
-            Player player = new Player();
-            player.chooseGesture();
+            if (player1.choice == player2.choice)
+            {
+                Console.WriteLine("The result is a tie!");
+                Console.ReadLine();
+            }
+
+            else if ((player1.choice == "rock") && (player2.choice == "scissors") || (player2.choice == "lizard")) 
+            {
+                player1.score++;
+                Console.WriteLine("Rock beats " + player2.choice + "!");
+                Console.WriteLine(player1.name + " score is: " + player1.score + "\n" + player2.name + " score is: " + player2.score);
+            }
+
         }
+        
     
         
     
