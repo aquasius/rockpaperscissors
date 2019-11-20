@@ -21,19 +21,25 @@ namespace RPSgame
         // member methods
         private void randomizeGestures()
         {
-            Random rnd = new Random();
-            rnd.Next(0, 5);
+            int cpuGesture = rand.Next(gesturesCount);
+            choice = gestures[cpuGesture];
+            Console.WriteLine(choice);
         }
 
-        public void createCPUName()
-        {
-            Random compName = new Random();
-            compName.Next()
-        }
+        
 
         public override void chooseGesture()
         {
             
+       
         }
+
+        public override void chooseName()
+        {
+            Console.WriteLine("My name is Grub");
+            Console.ReadLine();
+
+        }
+
     }
 }

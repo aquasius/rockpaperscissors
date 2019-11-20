@@ -26,7 +26,7 @@ namespace RPSgame
 
         // contructor
 
-
+        
 
 
         //member methods ( can do )
@@ -34,7 +34,8 @@ namespace RPSgame
         {
             displayRules();
             chooseNumberOfPlayers();
-            promptAskName();
+            player1.chooseName();
+            player2.chooseName();
             createPlayers(numberOfPlayers);
 
         }
@@ -50,21 +51,6 @@ namespace RPSgame
             numberOfPlayers = Convert.ToInt32(Console.ReadLine());
         }
 
-        public void promptAskName()
-        {
-            if(numberOfPlayers == 1)
-            {
-                Console.WriteLine("Please enter your name");
-                player1Name = Console.ReadLine();
-            }
-            else if (numberOfPlayers == 2)
-            {
-                Console.WriteLine("Player 1 please enter your name");
-                player1Name = Console.ReadLine();
-                Console.WriteLine("Player 2 please enter your name");
-                player2Name = Console.ReadLine();
-            }
-        }
         
         public void createPlayers(int numberOfPlayers)
         {
@@ -86,5 +72,11 @@ namespace RPSgame
             Player player = new Player();
             player.chooseGesture();
         }
+    
+        
+    
+    
+    
     }
+
 }

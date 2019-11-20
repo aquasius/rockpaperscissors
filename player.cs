@@ -31,10 +31,14 @@ namespace RPSgame
         
 
         public abstract void chooseGesture();
-        
-           
 
-        
+
+        public virtual void chooseName()
+        {
+            Console.WriteLine("Please enter your name");
+            name = Console.ReadLine();
+        }
+
 
     }
 }

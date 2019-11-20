@@ -26,6 +26,7 @@ namespace RPSgame
             choice = Console.ReadLine();
         }
 
+        
 
     }
 }
