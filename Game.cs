@@ -20,7 +20,7 @@ namespace RPSgame
         public int numberOfPlayers;
          Player player1;
          Player player2;
-
+        public string restartChoice;
 
 
 
@@ -130,13 +130,33 @@ namespace RPSgame
             }
             else if(player2.score == 1)
             {
-                Console.WriteLine(player2.name + " Wins the round")
+                Console.WriteLine(player2.name + " Wins the round!");
+                Console.WriteLine(player2.name + " score is: " + player2.score);
+                Console.WriteLine(player1.name + " score is: " + player1.score);
+
             }
             
         }
         
-    
-    
+        public void determineGameWinner()
+        {
+            if(player1.score == 2)
+            {
+                Console.WriteLine(player1.name + " Wins the game!");
+
+            }
+            else if (player2.score == 2)
+            {
+                Console.WriteLine(player2.name + " Wins the game!");
+            }
+
+        }
+            
+        public void restartGame()
+        {
+            Console.WriteLine("Would you like to play again?");
+
+        }
     
     }
 
