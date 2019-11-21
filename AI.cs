@@ -10,15 +10,19 @@ namespace RPSgame
     {
         // member vairables 
         
-        private Random rand;
+        
         public int gesturesCount;
         public int nameCount;
         private List<string> randNames;
+        private Random rand;
 
         // constructor
-        public AI()
+        public AI(Random random)
         {
             randNames = new List<string>() { "Wally", "Dorf", "Grub", "Loppy" };
+            rand = random;
+            nameCount = randNames.Count;
+
         }
 
 
@@ -26,7 +30,7 @@ namespace RPSgame
         // member methods
         public override void chooseGesture()
         {
-            int cpuGesture = rand.Next(gesturesCount);
+            int cpuGesture = rand.Next(gestures.Count - 1);
             choice = gestures[cpuGesture];
             Console.WriteLine(choice);
 
