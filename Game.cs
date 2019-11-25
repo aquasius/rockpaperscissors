@@ -10,13 +10,6 @@ namespace RPSgame
     {
     
         //member variables ( has a ) 
-        //public string player1Name;
-        //public string player2Name;
-        //public int players;
-        //public string aiName;
-        //public string rules;
-        //public string winner;
-        //public string loser;
         public int numberOfPlayers;
          Player player1;
          Player player2;
@@ -45,7 +38,7 @@ namespace RPSgame
             player1.chooseGesture();
             player2.chooseGesture();
             determineGestureWin();
-           // determineRoundWinner();
+          
             
             while((player1.score < 2) && (player2.score < 2))
             {
